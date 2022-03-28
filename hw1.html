@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function quest0() {
+            var promptInput = prompt('초 단위 시간을 입력하세요');
+            var mins = parseInt(promptInput / 60);
+            var secs = promptInput % 60;
+            console.log(mins + '분' + secs + '초 입니다.');
+
+        };
+
+        function quest1() {
+
+            var fx = prompt(('첫 번째 점의 x좌표를 입력하세요'));
+            var fy = prompt(('첫 번째 점의 y좌표를 입력하세요'));
+            var sx = prompt(('두 번째 점의 x좌표를 입력하세요'));
+            var sy = prompt(('두 번째 점의 y좌표를 입력하세요'));
+
+            var p1 = fx - sx;
+            var p2 = fy - sy;// 여기에 스크립트를 작성하세요            
+
+            let distance = getDist(p1, p2); // 반드시 이 코드를 이용하세요
+            console.log(distance);
+
+        }
+
+        function getDist(p1, p2) { // 입력 인자 설정 필요
+            console.log('Getting distance using getDist() func');
+            return Math.sqrt((p1) ** 2 + (p2) ** 2);// 여기에 스크립트를 작성하세요
+        }
+
+        function quest2(str) {
+            str = str.toUpperCase();
+            console.log(str);
+
+            // 여기에 스크립트를 작성하세요
+        }
+
+        function quest3() {
+            var num1 = parseInt(prompt('첫 번째 숫자를 입력하세요'));
+            var oper = prompt('연산자를 입력하세요');
+            var num2 = parseInt(prompt('두 번째 숫자를 입력하세요'));
+            // 여기에 스크립트를 작성하세요
+
+            var answer = operate(num1, oper, num2); // 반드시 이 코드를 사용하세요
+            console.log("정답은 %d입니다.", answer);
+        }
+
+        function operate(num1, oper, num2) { // 반드시 이 함수를 이용하여 연산 결과를 계산하세요
+            switch (oper) {
+                case '+':
+                    return num1 + num2;
+
+                case "-":
+                    return num1 - num2;
+
+                case "*":
+                    return num1 * num2;
+
+                case "/":
+                    return parseInt(num1 / num2);
+
+                case "%":
+                    return num1 % num2;
+
+                default:
+                    return
+            }
+            // 여기에 스크립트를 작성하세요
+            // 단, 반드시 switch 문을 활용하세요
+
+        }
+
+        function quest4() {
+            var User = prompt('가위 바위 보!');
+            // 여기에 스크립트를 작성하세요
+            var Computer = Math.floor(Math.random() * 3);
+            var 가위 = 0;
+            var 바위 = 1;
+            var 보 = 2;
+
+            if (User == '가위' && Computer == 바위) {
+                console.log('컴퓨터: 바위');
+                console.log('컴퓨터 승리!');
+            }
+            if (User == '가위' && Computer == 보) {
+                console.log('컴퓨터: 보');
+                console.log('유저 승리!');
+            }
+            if (User == '가위' && Computer == 가위) {
+                console.log('컴퓨터: 가위');
+                console.log('비김!');
+            }
+            if (User == '바위' && Computer == 가위) {
+                console.log('컴퓨터: 가위');
+                console.log('유저 승리!');
+            }
+            if (User == '바위' && Computer == 바위) {
+                console.log('컴퓨터: 바위');
+                console.log('비김!');
+            }
+            if (User == '바위' && Computer == 보) {
+                console.log('컴퓨터: 보');
+                console.log('컴퓨터 승리!');
+            }
+            if (User == '보' && Computer == 가위) {
+                console.log('컴퓨터: 가위');
+                console.log('컴퓨터 승리!');
+            }
+            if (User == '보' && Computer == 바위) {
+                console.log('컴퓨터: 바위');
+                console.log('유저 승리!');
+            }
+            if (User == '보' && Computer == 보) {
+                console.log('컴퓨터: 보');
+                console.log('비김!');
+
+            }
+
+        }
+
+        function quest5() {
+            str = prompt('문자열을 입력하세요') // 반드시 이 코드를 사용하세요
+            console.log(myReverse(str));
+        }
+
+        function myReverse(str) {
+            var freshStr = '';
+            for (var i = str.length - 1; i >= 0; i--) {
+                freshStr += str[i];
+            } return freshStr
+
+        }
+        // 여기에 스크립트를 작성하세요
+        // 반드시 반복문을 이용하여 str의 내용을 뒤집으세요
+
+
+
+        function quest6() {
+
+            while (true) {
+                var inputNumber = prompt('숫자를 입력하세요:');
+                if (inputNumber < 0) {
+                    console.log('끝!')
+                    break;
+
+                }
+                if (inputNumber % 2 == 0) {
+                    continue;
+                }
+                if (inputNumber % 2 == 1) {
+                    console.log(inputNumber + '를 입력하셨네요.');
+                    continue;
+
+                }
+            }
+
+        }
+
+        function quest7() {
+
+            var inputStr = prompt('문자열을 입력해주세요');
+            var emptyPlace = '';
+            let onlyCapital = inputStr.replace(/[a-z]/g, '');
+            let words = onlyCapital.split(' ');
+            for (let i = 0; i < words.length; i++) {
+                if (words[i][0] == undefined) {
+                    emptyPlace += '';
+                }
+                else {
+                    emptyPlace += words[i][0];
+                }
+            }
+            console.log(emptyPlace)
+            // 여기에 스크립트를 작성하세요
+
+        }
+
+        let testStr = 'My name is mymy. Your name is youryour. His name is hishis. Her name is herher. So, my, your, his, her, name will be mymyyouryourhishisherehr.';
+        // 위 변수를 이용하여 quest8()함수를 실행하세요
+
+        function quest8(str) {
+            // 여기에 스크립트를 작성하세요
+
+            const newstr = str.replace(/,/g, "");
+            const newstr2 = newstr.replace(/\./g, "");
+
+            var words = newstr2.split(' ');
+
+            const set = words.sort();
+            const set2 = new Set(set);
+            for (let word of set2) {
+                console.log(word)
+            }
+        }
+
+        let longStr = "Computer engineering has been rapidly changed than any other academic disciplines; these changes are immediately reflected in the industrial field.";
+        // 위 변수를 이용하여 quest9()함수를 실행하세요
+
+        function quest9(str) {
+            const strs1 = str.replace(/,/g, "");
+            const strs2 = strs1.replace(/\./g, "");
+            const strs3 = strs2.replace(/;/g, "");
+            const strs4 = strs3.replace(/ /g, "");
+
+            var strs = strs4.split('');
+
+            const result = strs.reduce((accu, curr) => {
+                accu.set(curr, (accu.get(curr) || 0) + 1);
+                return accu;
+            }, new Map());
+
+            for (let [key, value] of result.entries()) {
+                console.log(key + ':' + value + '\t');
+            }
+            // 여기에 스크립트를 작성하세요    
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
